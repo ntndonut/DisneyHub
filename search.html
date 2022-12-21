@@ -1,0 +1,58 @@
+<!--    6388052 Runchana
+        6388053 Chayanis
+        6388106 Nantanat  -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DisneyHub</title>
+    <link rel="stylesheet" href="./static/search.css">
+    <nav class="navbar">
+        <!-- Navigation bar -->
+        <img src="https://sv1.picz.in.th/images/2022/11/19/GBHbL8.png" id="header"/>
+        <a href="/" id="disneyHub"><h1>DisneyHub</h1></a>
+        <form class="col-md-6" method="GET" action="{{ url_for('search') }}">
+            <input type="text" class="form-control" name="keyword" value="{{keyword}}"> 
+            <button type="submit" class="btn-btn-primary"><img src="https://sv1.img.in.th/n1XuC.png" class="search-icon"/></button>
+        </form>
+    </nav>
+    
+</head>
+
+<body class="bg">
+
+    {% for doc in hits %}
+    <div id="container">
+        <div id="character-details">
+            <h1>{{ doc['character'] }}</h1>
+            <h3>From {{ doc['movie'] }}</h3>
+            {% if doc['role'] != 'None' %}
+                <b>Role:</b><a style="color:crimson">Villain</a>
+            {% else %}
+                <b>Role:</b> <a style="color: purple;">Heroes</a>
+            {% endif %}
+            <!-- Voice actor  -->
+            <b>Voice actor:</b> {{ doc['voice-actor'] }}<br>
+            <!-- Description  -->
+            <p id="description">{{ doc['description/biography'] }}</p>
+        </div>
+        <div id="character-image">
+            <!-- Picture URL -->
+            <img src="{{doc['pictureURL']}}" width="250" height="250"></img>
+        </div>
+
+    </div>
+    &#160;&#160;&#160;
+    {% endfor %}
+
+    <!-- If it has no result for this search query, then show 'NO RESULT' -->
+    {% if page_total == 0 %}
+    <div id="noresult">
+        <h2>Sorry, it is our fault that we have no information about this character.</h2>
+        <img src="https://www.disneyclips.com/images/images/eeyore-cloud.png"></img>
+    </div>
+    {% endif %}
+</body>
+
+</html>

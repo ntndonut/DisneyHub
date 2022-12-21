@@ -1,0 +1,118 @@
+body {
+    font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg {
+    background-image: url("background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#header {
+    display: block;
+    width: 250px;
+    height: 250px;
+    margin-left: 280px;
+}
+
+#disneyHub {
+    color: rgb(255, 255, 255);
+    text-shadow: 6px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+    border: #000000;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2em;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.form-control {
+    border-radius: 20px;
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn-btn-primary {
+    border-radius: 30px;
+    width: auto;
+    margin: 30px;
+}
+
+.col-md-6 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.search-icon {
+    width: 35px;
+    height: 35px;
+    padding: 0%;
+}
+
+#container {
+    box-shadow: 0 6px 20px 1px rgb(0, 179, 255);
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px auto;
+    width: 70%;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+}
+
+#character-details {
+    position: relative;
+    text-align: left;
+    overflow: scroll;
+    padding: 20px;
+    float: left;
+    margin-left: 35px;
+}
+
+#character-details h1 {
+    margin-top: 0px;
+}
+
+#character-image img {
+    overflow: auto;
+    height: 100%;
+    width: 310px;
+    float: right;
+}
+
+#character-image:hover {
+    opacity: 0.7;
+}
+
+#noresult h2 {
+    text-align: center;
+    color: white;
+}
+
+#noresult img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
